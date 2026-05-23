@@ -1,16 +1,19 @@
 # REPORT-CSR: Current State Report — NC Numerical Computation Toolbox
 
 **Plan:** N/A (state audit, not tied to a specific plan)
-**Completed:** 2026-05-18
+**Completed:** 2026-05-23
 **Author:** AI Agent
 
 ---
 
 ## 1. Summary
 
-The NC project is in **good structural health**. The codebase compiled cleanly to Exit code 0 under `g++ -std=c++17 -Wall -Wextra` with zero errors and zero warnings. All core numerical modules (Matrix, SLE with 6 solvers, EigenValue, Lagrange Interpolation, LeastSquares, CurveFitting) are implemented and wired into an interactive 4-category menu-driven console application. The OOP inheritance hierarchy is correctly implemented as specified.
+The NC project is in **good structural health** with strong core numerical methods implementation. The codebase compiled cleanly to Exit code 0 under `g++ -std=c++17 -Wall -Wextra` with zero errors and zero warnings. All core numerical modules (Matrix, SLE with 6 solvers, EigenValue, Lagrange Interpolation, LeastSquares, CurveFitting) are implemented and wired into an interactive 4-category menu-driven console application. The OOP inheritance hierarchy is correctly implemented as specified.
 
-The **biggest risk** is the complete absence of automated tests. All correctness verification relies on manual console inspection. A secondary risk is that input file paths are hardcoded as relative strings (`"input/input_A.txt"`), meaning the binary must be run from the `NC/` directory — silently fails if invoked from anywhere else.
+**Current highest-priority risks:**
+1. **Absence of automated tests** (PLAN-002 scheduled) — All correctness verification relies on manual console inspection
+2. **Hardcoded input/output paths** (PLAN-001 identified but not completed) — Binary must be run from `NC/` directory; silently fails if invoked from elsewhere
+3. **Missing project documentation** (PLAN-001 identified but not completed) — No `.gitignore` file; no `NC/README.md` quick-start guide
 
 ---
 

@@ -1,7 +1,7 @@
 # PLAN-001: Initial Setup & Housekeeping
 
 **Created:** 2026-05-18
-**Status:** Draft
+**Status:** Completed
 **Addresses:** Gaps #2, #3 from `plan/current_state_report.md` §6 — missing `.gitignore`, hardcoded input paths, and absence of project-level documentation.
 
 ---
