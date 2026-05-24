@@ -48,6 +48,7 @@ public:
     bool isSymmetric() const;
     bool isDiagonal() const;
     bool isDiagonallyDominant() const;
+    bool isPositiveDefinite() const;
     bool isNull() const;
 
     // I/O

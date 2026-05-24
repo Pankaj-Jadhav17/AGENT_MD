@@ -37,7 +37,11 @@ main.o: main.cpp
 dirs:
 	@mkdir -p output
 
-clean:
-	rm -f src/*.o *.o $(TARGET)
+test: src/*.o tests/test_matrix.cpp
+	$(CXX) $(CXXFLAGS) src/*.o tests/test_matrix.cpp -o test_runner
+	./test_runner
 
-.PHONY: all clean dirs
+clean:
+	rm -f src/*.o *.o $(TARGET) test_runner
+
+.PHONY: all clean dirs test

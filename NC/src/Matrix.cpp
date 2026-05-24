@@ -200,6 +200,33 @@ bool Matrix::isDiagonallyDominant() const {
     return true;
 }
 
+bool Matrix::isPositiveDefinite() const {
+    if (!isSquare() || !isSymmetric()) return false;
+    int n = rows;
+    
+    // Attempt Cholesky decomposition
+    // If successful without negative pivot, matrix is positive-definite
+    vector<vector<double>> L(n, vector<double>(n, 0.0));
+    
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j <= i; j++) {
+            double sum = 0.0;
+            for (int k = 0; k < j; k++)
+                sum += L[i][k] * L[j][k];
+            
+            if (i == j) {
+                double val = data[i][i] - sum;
+                if (val <= 1e-10)  // Use same tolerance as Cholesky
+                    return false;
+                L[i][j] = sqrt(val);
+            } else {
+                L[i][j] = (data[i][j] - sum) / L[j][j];
+            }
+        }
+    }
+    return true;
+}
+
 bool Matrix::isNull() const {
     const double eps = 1e-9;
     for (int i = 0; i < rows; i++)
