@@ -1,7 +1,7 @@
 # PLAN-002: Matrix Hardening & SLE Solver Validation
 
 **Created:** 2026-05-23
-**Status:** Draft
+**Status:** Completed
 **Addresses:** The NC project currently has zero automated tests. All correctness verification relies on manual console inspection. This plan introduces a comprehensive test suite for Matrix operations and validates all six SLE solvers against a single reference test case.
 
 ---
