@@ -10,4 +10,4 @@ public:
     vector<double> solve() override;
 };
 
-#endif // GAUSSELIMINATION_HPP
+#endif 
